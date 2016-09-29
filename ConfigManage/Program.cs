@@ -9,6 +9,7 @@ namespace ConfigManage
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
