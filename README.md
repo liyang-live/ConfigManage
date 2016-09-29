@@ -10,8 +10,8 @@
           </ol>
           </li>
    <li>使用方法：<br/>
- 调用  CommonConfigs.Instance的扩展方法即可<br\>
- 该实例的扩展方法有4种：ConfigInteger、ConfigList、ConfigBoolean、ConfigString
+ 调用  CommonConfigs.Instance的扩展方法即可<br/>
+ <b>该实例的扩展方法有4种：ConfigInteger、ConfigList、ConfigBoolean、ConfigString</b>
  <ol>
  <li>ConfigInteger：返回int32类型的值，默认返回0</li>
  <li>ConfigString：返回字符串类型的值，默认返回空字符串</li>
