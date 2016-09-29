@@ -1,4 +1,4 @@
-# ConfigManage
+<h3><a href="http://www.liyang.live/">官方网站</a></h3>
 
 <h1>配置管理框架</h1>
    <li>该框架进一个类文件(CommonConfigs.cs)将其拷贝进项目即可</li>
@@ -22,4 +22,4 @@
    </li>
 
 
-<h3><a href="http://www.liyang.live/">官方网站</a></h3>
+
