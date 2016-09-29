@@ -10,8 +10,10 @@
           <li>使用扩展方法（AddServiceProvider）将实例添加进去,如:CommonConfigs.AddServiceProvider(new OracleServiceProvider());</li>
           </ol>
           </li>
-   <br/><br/>       
-   <li><b>使用方法：</b><br/><br/>
+   <br/><br/>    
+
+<b>使用方法：</b><br/><br/>
+   <li>
  调用  CommonConfigs.Instance的扩展方法即可<br/><br/>
  <b>该实例的扩展方法有4种：ConfigInteger、ConfigList、ConfigBoolean、ConfigString</b>
  <ol>
