@@ -13,7 +13,7 @@
    <br/><br/>    
 
 <b>使用方法：</b><br/>
-<ul type="1">
+<ul>
    <li>
  调用 CommonConfigs.Instance的扩展方法即可<br/><br/>   </li>
  <li>
