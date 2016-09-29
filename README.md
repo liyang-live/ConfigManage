@@ -1,9 +1,7 @@
-<li>
-<h3><a href="http://www.liyang.live/" target="_blank">官方网站</a></h3>
-</li>
+<h1><a href="http://www.liyang.live/" target="_blank">官方网站</a></h1>
 
 
-<h1>配置管理框架</h1>
+<h3>配置管理框架</h3>
    <li>该框架进一个类文件(CommonConfigs.cs)将其拷贝进项目即可</li>
    <li>该框架自带一个基本的SqlServerServiceProvider的实现,如果使用其他数据库连接请自行实现<br/><br/><br/>
          <b> 实现方式：</b><br/>
