@@ -210,6 +210,43 @@ namespace ConfigManage
         }
 
         /// <summary>
+        /// 获取List<int>类型参数 如果为空则返回空对象而不是null
+        /// </summary>
+        /// <param name="config"></param>
+        /// <returns></returns>
+        [Description("获取List<string>类型参数  如果为空则返回空对象而不是null")]
+        public List<int> ConfigListInt(ConfigListInt config)
+        {
+            if (config == null || string.IsNullOrWhiteSpace(config.Name))
+            {
+                throw new ConfigException("配置信息不能未null,请检查后重新传入!");
+            }
+
+            if (config.Name.Trim().Length > 50)
+            {
+                throw new ConfigException("配置名称的长度应小于50个字符!");
+            }
+
+
+            var result = GetConfig(new ConfigModel
+            {
+                Id = 0,
+                Name = config.Name,
+                Classify = config.Classify,
+                Parameter = (config.Parameter == null ? null : string.Join(";", config.Parameter)),
+                ButtonType = config.ButtonType.GetHashCode(),
+                Remark = config.Remark
+            });
+
+            if (result == null)
+            {
+                return new List<int>();
+            }
+
+            return result.Split(';').Select(s => int.Parse(s)).ToList();
+        }
+
+        /// <summary>
         /// 获取bool类型参数
         /// </summary>
         /// <param name="config"></param>
@@ -487,6 +524,45 @@ namespace ConfigManage
     }
 
     /// <summary>
+    /// List<Int>类型配置实体
+    /// </summary>
+    [Description("配置实体")]
+    public class ConfigListInt
+    {
+        /// <summary>
+        /// 配置名称
+        /// </summary>
+        [Description("配置名称")]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// 参数   默认返回null 多个之间使用;隔开
+        /// </summary>
+        [Description("参数  默认返回null 多个之间使用;隔开")]
+        public List<int> Parameter { get; set; }
+
+        /// <summary>
+        /// 配置分类
+        /// </summary>
+        [Description("配置分类")]
+        public string Classify { get; set; }
+
+        /// <summary>
+        /// 按钮类型   注：该配置用以指定在可视化时显示的按钮类型 如：文本框  单选  下拉等
+        /// 1、文本框  2、单选按钮  3、多选框  4、下拉框  5、多行文本框
+        /// </summary>
+        [Description("按钮类型（1、文本框  2、单选按钮  3、多选框  4、下拉框  5、多行文本框）  注：该配置用以指定在可视化时显示的按钮类型 如：文本框  单选  下拉等")]
+        public EnumButtonType ButtonType { get; set; }
+
+        /// <summary>
+        /// 备注
+        /// </summary>
+        [Description("备注")]
+        public string Remark { get; set; }
+    }
+
+
+    /// <summary>
     /// Boolean类型配置实体
     /// </summary>
     [Description("配置实体")]
@@ -561,10 +637,6 @@ namespace ConfigManage
         [Description("多行文本框")]
         TextAre = 5
     }
-
-
-
-
 
 
     /// <summary>
