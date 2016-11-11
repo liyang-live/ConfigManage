@@ -17,12 +17,13 @@
    <li>
  调用 CommonConfigs.Instance的扩展方法即可<br/><br/>   </li>
  <li>
- <b>该实例的扩展方法有4种：ConfigInteger、ConfigList、ConfigBoolean、ConfigString</b>
+ <b>该实例的扩展方法有4种：ConfigInteger、ConfigList、ConfigListInt、ConfigBoolean、ConfigString</b>
  <ol>
  <li>ConfigInteger：返回int32类型的值，默认返回0</li>
  <li>ConfigString：返回字符串类型的值，默认返回空字符串</li>
  <li>ConfigBoolean：返回布尔类型的值，默认返回false</li>
   <li>ConfigList：返回List<string>类型，默认空实例而不是null,从而避免使用者出错</li>
+    <li>ConfigListInt：返回List<Int>类型，默认空实例而不是null,从而避免使用者出错</li>
  </ol>
    </li>
 </ul>
